@@ -10,7 +10,7 @@ const CartOverView = () => {
   }, 0);
 
   return (
-    <footer className="footer">
+    <footer className="footers">
       <span>{totalItems} Pizza(s): Ghc {totalPrice}</span>
       <Link className="link" to="/cart">Open Cart</Link>
     </footer>

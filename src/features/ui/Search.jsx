@@ -15,7 +15,7 @@ const Search = () => {
       className="search" 
       value={inputs} 
       onChange={handleChange} 
-      placeholder="Search order id"
+      placeholder="Search order #"
     />
   );
 }

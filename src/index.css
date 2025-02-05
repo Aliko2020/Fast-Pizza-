@@ -37,7 +37,6 @@
     padding: 16px;
     background: var(--color-primary);
   }
-  
   .search {
     padding: 6px 8px;
     border-radius: 16px;
@@ -172,15 +171,91 @@
   .link {
     color: var(--color-primary);
     text-decoration: none;
-    font-weight: bold;
   }
   
   .link:hover {
     color: var(--color-text-primary);
     background-color: blue; 
   }
-  
-  .footer {
+  .pizza-item{
+    display: flex;
+    gap: 16px;
+  }
+  /* MenuItem.css */
+.menu-item {
+  display: flex;
+  gap: 16px;
+  padding: 8px 0;
+  max-width: 720px;
+  margin: 16px auto;
+}
+
+.menu-item img {
+  height: 96px;
+  object-fit: cover;
+}
+
+.menu-item img.sold-out {
+  opacity: 0.7;
+  filter: grayscale(100%);
+}
+
+.menu-item .content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding-top: 2px;
+}
+
+.menu-item .content .name {
+  font-weight: 500;
+}
+
+.menu-item .content .ingredients {
+  font-size: 0.875rem; 
+  text-transform: capitalize;
+  font-style: italic;
+  color: #6b7280; 
+}
+
+.menu-item .footer {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu-item .footer .price {
+  font-size: 0.875rem; 
+}
+
+.menu-item .footer .sold-out {
+  font-size: 0.875rem; 
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #6b7280; 
+}
+
+.menu-item .footer .actions {
+  display: flex;
+  align-items: center;
+  gap: 12px; 
+}
+
+@media (min-width: 640px) {
+  .menu-item .footer .actions {
+    gap: 32px;
+  }
+}
+
+
+/* MenuItem.css */
+.button:active {
+  transform: scale(0.95);
+  transition: transform 0.1s;
+}
+
+  .footers {
     display: flex;
     justify-content: space-between;
     background: var(--color-background);
