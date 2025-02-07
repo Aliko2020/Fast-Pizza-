@@ -16,7 +16,7 @@ const Home = () => {
       Straight out of the oven,straight to you.</span>
       </h1>
       {user? <Button label={`Continue Ordering, ${user}`} onClick={()=> navigate('/menu')} className="button"/> : <div>
-        <p>👋Welcome! start by telling us your name</p>
+        <p>👋,start by telling us your name</p>
         <UserForm />
       </div> }
     </section>

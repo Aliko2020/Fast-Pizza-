@@ -5,14 +5,11 @@ const CartOverView = () => {
   const cartItems = useSelector((state) => state.cart);
 
   const totalItems = cartItems.length;
-  const totalPrice = cartItems.reduce((total, item) => {
-    return total + (item.price ? item.price : 0);
-  }, 0);
 
   return (
     <footer className="footers">
-      <span>{totalItems} Pizza(s): Ghc {totalPrice}</span>
-      <Link className="link" to="/cart">Open Cart</Link>
+      <span>{totalItems} {`Pizza${totalItems > 1? "s": ""}`} in cart 🛒</span>
+      <Link className="link" to="/cart">Open Cart 🛒</Link>
     </footer>
   );
 }

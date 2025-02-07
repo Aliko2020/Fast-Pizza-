@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
-import { removeFromCart, clearCart, increaseQuantity, decreaseQuantity } from "./cartSlice";
-
+import { removeFromCart, increaseQuantity, decreaseQuantity } from "./cartSlice";
+import { CiTrash } from "react-icons/ci";
 
 const Cart = () => {
   const user = useSelector((state) => state.user.name);
@@ -18,29 +18,30 @@ const Cart = () => {
   return (
     <section className="cart-container">
       <div className="cart">
-        <h2>Your cart, {user}</h2>
+        <h2 style={{marginTop: 8}}>Your cart 🛒, {user}</h2>
+        <hr style={{marginTop: 8, color: "gray"}} />
         {cart.length === 0 ? (
-          <p style={{ marginTop: 16, marginBottom: 16 }}>Your cart is still empty. Start adding some pizzas :)</p>
+          <p style={{ marginTop: 32, marginBottom: 16 }}>Your cart 🛒 is still empty. Start adding some pizzas :)</p>
         ) : (
           cart.map((item) => (
             <div className="cart-item" key={item.pizzaId}>
               <div className="cart-controls">
-                <p>2× {item.name}</p>
+                <p style={{marginRight: 16}}>{item.name}</p>
                 <div className="cart-controls">
-                  <span>₵{item.totalPrice}</span>
+                  <span style={{marginRight: 16}}>₵{item.totalPrice}</span>
                   <div className="cart-controls">
                     <button className="cart-btn" onClick={() => decreaseQuantityHandler(item)}>-</button>
                     <span>{item.quantity}</span>
                     <button className="cart-btn" onClick={() => increaseQuantityHandler(item)}>+</button>
-                    <button className="button" onClick={() => dispatch(removeFromCart(item.pizzaId))}>Delete</button>
+                    <CiTrash style={{marginLeft: 16}} size={22} color="gray" onClick={() => dispatch(removeFromCart(item.pizzaId))}>Delete</CiTrash>
                   </div>
                 </div>
               </div>
             </div>
           ))
         )}
-        {cart.length === 0 ? "" : <button className="button">Place Order</button>}
-        {cart.length === 0 ? "" : <button className="btn-clear" onClick={() => dispatch(clearCart())}>Clear Cart</button>}
+        <hr style={{marginBottom: 8,marginTop: 9, color: "gray"}} />
+        {cart.length === 0 ? "" : <button className="button">Order</button>}
       </div>
     </section>
   );

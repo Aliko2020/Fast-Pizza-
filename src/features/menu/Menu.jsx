@@ -5,7 +5,7 @@ import MenuItem from "./MenuItem";
 
 const Menu = () => {
   const menu = useLoaderData();
-
+  
   return (
     <ul style={{padding: 16,}}>
       {menu.data.map((pizza) => (
